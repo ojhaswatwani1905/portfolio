@@ -121,7 +121,7 @@ export const Projects: React.FC = () => {
         {/* Footnote / Architecture Note */}
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FAF7F2] border border-[#E2D8C7] rounded-full text-xs text-[#7A7268] font-mono">
-            <span>SHOWING {filteredProjects.length} OF {PROJECTS.length} PRODUCTION DEPLOYMENTS</span>
+            <span>SHOWING {filteredProjects.length} OF {PROJECTS.length} FEATURED SYSTEMS</span>
             <span>•</span>
             <span className="text-[#8B6F47]">CLICK ANY CARD TO EXPAND DEEP DIVE</span>
           </div>

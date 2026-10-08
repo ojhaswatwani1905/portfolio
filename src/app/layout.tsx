@@ -23,9 +23,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "OJHAS WATWANI — Technology Consultant | FinTech · Banking · Trading",
+  title: "Ojhas Watwani — Senior Technology Consultant | FinTech · Banking · Trading",
   description:
-    "Senior Technology Consultant with 10+ years of experience designing scalable, secure, and high-performance financial systems across banking, trading, crypto, and gaming.",
+    "Senior Technology Consultant specializing in FinTech, digital banking platforms, trading systems, and financial systems architecture.",
   keywords: [
     "Ojhas Watwani",
     "Technology Consultant",

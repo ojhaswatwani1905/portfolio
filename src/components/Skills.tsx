@@ -72,7 +72,7 @@ export const Skills: React.FC = () => {
                       Institutional Domain Expertise
                     </h3>
                     <p className="text-[11px] sm:text-xs text-[#7A7268] mt-0.5 sm:mt-1">
-                      Mission-critical financial, compliance, and distributed system disciplines.
+                      Financial systems architecture, compliance awareness, and distributed system disciplines.
                     </p>
                   </div>
                   <Shield className="w-5 h-5 text-[#8B6F47] shrink-0" />
@@ -99,7 +99,7 @@ export const Skills: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-[#F0E8DC] mb-4 sm:mb-6">
                   <div>
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#161616]">
-                      Production Technology Stack
+                      Verified Technology Stack
                     </h3>
                     <p className="text-[11px] sm:text-xs text-[#7A7268] mt-0.5 sm:mt-1">
                       Core languages, database systems, containerization, and cloud infrastructure.
@@ -130,7 +130,7 @@ export const Skills: React.FC = () => {
             )}
 
             <div className="mt-8 pt-4 border-t border-[#F0E8DC] flex items-center justify-between text-xs font-mono text-[#7A7268]">
-              <span>ENTERPRISE-GRADE EXPERTISE</span>
+              <span>ENTERPRISE ARCHITECTURE PRACTICE</span>
               <span className="text-[#8B6F47] font-semibold">10+ YEARS HANDS-ON</span>
             </div>
           </div>

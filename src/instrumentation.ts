@@ -22,9 +22,9 @@ export async function register() {
       }
     };
 
-    // Initial ping 15 seconds after server boot
+    // Initial health ping 15 seconds after server boot
     setTimeout(pingSelf, 15000);
-    // Recurring ping every 10 minutes to prevent Render cold-start sleeps
+    // Recurring health ping every 10 minutes
     setInterval(pingSelf, PING_INTERVAL_MS);
   }
 }

@@ -7,8 +7,8 @@ A luxury editorial, recruiter-first portfolio engineered for **Ojhas Watwani** �
 ## 🌟 Key Features
 
 - **Editorial FinTech Aesthetic:** Warm cream/ivory paper palette (`#F6F3EC`), classical serif typography, architectural blueprints, and interactive deal/case-study modals.
-- **Zero Cold-Starts on Render:** Built-in self-calling keep-alive instrumentation (`src/instrumentation.ts` + `/api/ping`) that continuously pings the service every 10 minutes to prevent Render free-tier instances from spinning down or displaying the loading screen.
-- **Render Ready:** Includes [`render.yaml`](./render.yaml) for zero-config 1-click Web Service deployment.
+- **Render Ready:** Includes [`render.yaml`](./render.yaml) for zero-config 1-click Web Service deployment on Node 20.
+- **Health Check Endpoint:** Lightweight `/api/ping` status endpoint for monitoring uptime and service responsiveness.
 - **Production Performance:** Next.js 16 (Turbopack, Partial Prefetching, Cache Components), Framer Motion, Tailwind CSS v4, Lucide icons.
 
 ---
@@ -23,11 +23,9 @@ A luxury editorial, recruiter-first portfolio engineered for **Ojhas Watwani** �
    - **Build Command:** `npm install && npm run build`
    - **Start Command:** `npm start`
    - **Plan:** Free
-5. (Optional) Set environment variable:
-   - `RENDER_EXTERNAL_URL`: *(Render automatically populates this with your deployed URL, e.g. `https://portfolio-xxxx.onrender.com`)*
-6. Click **Create Web Service**.
+5. Click **Create Web Service**.
 
-> **Note on Keep-Alive:** The background process (`src/instrumentation.ts`) automatically pings `https://<your-service>.onrender.com/api/ping` every 10 minutes. Because Render sleeps idle free instances after 15 minutes of inactivity, this keep-alive ensures your portfolio stays warm and responsive 24/7 without loading screens.
+> **Note on Render Free Tier:** Hosted on Render Free. Free web services may spin down after periods of inactivity and may require a short wake-up period on the next request. For persistent zero-latency uptime without spin-downs, upgrade the instance to Render Starter or configure an external synthetic monitor probe.
 
 ---
 
@@ -43,14 +41,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Test the keep-alive endpoint:
+Test the health check endpoint:
 ```bash
 curl http://localhost:3000/api/ping
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Verified Tech Stack
 
 - **Framework:** Next.js 16 (App Router)
 - **Styling:** Tailwind CSS v4 + Vanilla CSS Design Tokens

@@ -92,8 +92,8 @@ export const DomainExpertise: React.FC = () => {
 
               {/* Card Footer */}
               <div className="mt-6 pt-3 border-t border-[#F0E8DC] flex items-center justify-between text-[11px] font-mono text-[#7A7268]">
-                <span>ENTERPRISE STANDARDS</span>
-                <span className="text-[#8B6F47] font-semibold">PRODUCTION PROVEN</span>
+                <span>ARCHITECTURE DOMAIN</span>
+                <span className="text-[#8B6F47] font-semibold">CORE PRACTICE</span>
               </div>
             </div>
           ))}
