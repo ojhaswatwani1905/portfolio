@@ -9,12 +9,12 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-20 sm:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Two-column layout on desktop: Left column stretches full height; inner container is sticky */}
+        {/* Desktop Split-Scroll Layout: Left column is sticky; Right column provides the 70vh scroll runway */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
-          {/* LEFT COLUMN: Stretches full height of grid on desktop, providing the scroll runway */}
+          {/* LEFT COLUMN: Stretches full height of section on desktop, hosting the sticky Track Record */}
           <div className="lg:col-span-5 relative">
-            <div className="lg:sticky lg:top-28 space-y-6">
+            <aside className="lg:sticky lg:top-[100px] space-y-6">
               
               {/* Section Header Label */}
               <div className="flex items-center gap-2">
@@ -65,16 +65,16 @@ export const Experience: React.FC = () => {
                 </div>
               </div>
 
-            </div>
+            </aside>
           </div>
 
-          {/* RIGHT COLUMN: Natural scroll column containing the experience cards */}
-          <div className="lg:col-span-7 relative pb-8 lg:pb-56">
+          {/* RIGHT COLUMN: Natural scroll runway with 70vh separation between career tenures */}
+          <div className="lg:col-span-7 relative pb-8 lg:pb-[40vh]">
             
             {/* Timeline Vertical Rail */}
-            <div className="absolute left-3.5 sm:left-6 top-6 bottom-16 lg:bottom-64 w-[2px] bg-[#D5C9B4]" />
+            <div className="absolute left-3.5 sm:left-6 top-6 bottom-16 lg:bottom-[45vh] w-[2px] bg-[#D5C9B4]" />
 
-            <div className="space-y-10 lg:space-y-72 pl-7 sm:pl-16">
+            <div className="space-y-10 lg:space-y-[70vh] pl-7 sm:pl-16">
               {EXPERIENCES.map((exp, idx) => (
                 <div
                   key={exp.id}

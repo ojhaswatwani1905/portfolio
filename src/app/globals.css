@@ -16,12 +16,17 @@
     --bronze-dark: #6E5634;
   }
 
-  html, body {
+  html {
     background-color: var(--paper-bg);
     color: var(--ink-black);
     font-family: var(--font-sans);
-    overflow-x: clip;
-    max-width: 100vw;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    color: var(--ink-black);
+    font-family: var(--font-sans);
+    min-height: 100vh;
   }
 }
 
