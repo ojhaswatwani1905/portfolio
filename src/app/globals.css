@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-handwriting: "Caveat", cursive;
+    --paper-bg: #F4EFE5;
+    --paper-card: #FFFFFF;
+    --paper-subtle: #EDE5D7;
+    --paper-border: #E0D7C6;
+    --ink-black: #161616;
+    --ink-charcoal: #29251F;
+    --ink-muted: #5D564C;
+    --bronze: #8B6F47;
+    --bronze-dark: #6E5634;
+  }
+
+  html, body {
+    background-color: var(--paper-bg);
+    color: var(--ink-black);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
+
+/* Custom Typography Utility */
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), sans-serif;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting), cursive;
+}
+
+/* Architectural Paper Card - Clean, Thin Border, Soft Shadow */
+.paper-sheet {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(139, 111, 71, 0.18);
+  box-shadow: 
+    0 1px 3px rgba(22, 22, 22, 0.03),
+    0 4px 14px rgba(41, 37, 31, 0.05);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.paper-sheet:hover {
+  border-color: rgba(139, 111, 71, 0.35);
+  box-shadow: 
+    0 2px 6px rgba(22, 22, 22, 0.04),
+    0 8px 24px rgba(41, 37, 31, 0.08);
+}
+
+.paper-sheet-subtle {
+  background-color: #EDE5D7;
+  border: 1px solid rgba(139, 111, 71, 0.22);
+  box-shadow: 0 1px 3px rgba(22, 22, 22, 0.02);
+}
+
+/* Grid & Blueprint Pattern for Financial Infrastructure */
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(139, 111, 71, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 111, 71, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hide scrollbars but keep smooth scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
