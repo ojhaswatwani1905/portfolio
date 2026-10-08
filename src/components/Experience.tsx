@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Check, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
 import { EXPERIENCES } from "@/data/portfolioData";
 
 export const Experience: React.FC = () => {
@@ -10,76 +9,75 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-20 sm:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        {/* Two-column layout on desktop: Left column stretches full height; inner container is sticky */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
-          {/* LEFT COLUMN: Sticky on desktop (lg+), static on mobile */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6">
-            
-            {/* Section Header Label */}
-            <div className="flex items-center gap-2">
-              <span className="w-6 h-[1px] bg-[#8B6F47]" />
-              <span className="text-xs uppercase tracking-[0.25em] text-[#8B6F47] font-semibold">
-                Track Record
-              </span>
-              <span className="w-12 h-[1px] bg-[#E0D7C6]" />
-            </div>
-
-            {/* Heading & Narrative */}
-            <div className="space-y-4">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#161616] leading-[1.12]">
-                10+ YEARS <br />
-                <span className="italic font-serif text-[#8B6F47]">
-                  BUILDING FINANCIAL TECHNOLOGY
+          {/* LEFT COLUMN: Stretches full height of grid on desktop, providing the scroll runway */}
+          <div className="lg:col-span-5 relative">
+            <div className="lg:sticky lg:top-28 space-y-6">
+              
+              {/* Section Header Label */}
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-[1px] bg-[#8B6F47]" />
+                <span className="text-xs uppercase tracking-[0.25em] text-[#8B6F47] font-semibold">
+                  Track Record
                 </span>
-              </h2>
+                <span className="w-12 h-[1px] bg-[#E0D7C6]" />
+              </div>
 
-              <p className="text-sm sm:text-base text-[#4A433A] leading-relaxed font-sans pt-1 max-w-md">
-                Over a decade of senior engineering and architectural advisory spanning digital
-                banking, trading platforms, and real-time wallet systems across two major tenures.
-              </p>
-            </div>
+              {/* Heading & Narrative */}
+              <div className="space-y-4">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#161616] leading-[1.12]">
+                  10+ YEARS <br />
+                  <span className="italic font-serif text-[#8B6F47]">
+                    BUILDING FINANCIAL TECHNOLOGY
+                  </span>
+                </h2>
 
-            {/* Corporate Tenure Breakdown Box */}
-            <div className="pt-2 max-w-md">
-              <div className="p-4 sm:p-5 bg-white border border-[#E0D7C6] rounded-xs shadow-2xs">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#161616]">
-                  <ShieldCheck className="w-4 h-4 text-[#8B6F47]" />
-                  <span>DUAL 5-YEAR SENIOR TENURES</span>
-                </div>
-                <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-[#F0E8DC]">
-                  <div className="p-2.5 bg-[#FAF7F2] rounded-xs border border-[#E0D7C6]">
-                    <span className="text-[10px] font-mono text-[#8B6F47] block font-semibold">2021 — PRESENT</span>
-                    <span className="text-xs font-bold text-[#161616] block mt-0.5">BETADRiX</span>
-                    <span className="text-[10px] text-[#645D53]">5 Years Tenure</span>
+                <p className="text-sm sm:text-base text-[#4A433A] leading-relaxed font-sans pt-1 max-w-md">
+                  Over a decade of senior engineering and architectural advisory spanning digital
+                  banking, trading platforms, and real-time wallet systems across two major tenures.
+                </p>
+              </div>
+
+              {/* Corporate Tenure Breakdown Box */}
+              <div className="pt-2 max-w-md">
+                <div className="p-4 sm:p-5 bg-white border border-[#E0D7C6] rounded-xs shadow-2xs">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#161616]">
+                    <ShieldCheck className="w-4 h-4 text-[#8B6F47]" />
+                    <span>DUAL 5-YEAR SENIOR TENURES</span>
                   </div>
-                  <div className="p-2.5 bg-[#FAF7F2] rounded-xs border border-[#E0D7C6]">
-                    <span className="text-[10px] font-mono text-[#8B6F47] block font-semibold">2016 — 2021</span>
-                    <span className="text-xs font-bold text-[#161616] block mt-0.5">INFOTECH</span>
-                    <span className="text-[10px] text-[#645D53]">5 Years Tenure</span>
+                  <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-[#F0E8DC]">
+                    <div className="p-2.5 bg-[#FAF7F2] rounded-xs border border-[#E0D7C6]">
+                      <span className="text-[10px] font-mono text-[#8B6F47] block font-semibold">2021 — PRESENT</span>
+                      <span className="text-xs font-bold text-[#161616] block mt-0.5">BETADRiX</span>
+                      <span className="text-[10px] text-[#645D53]">5 Years Tenure</span>
+                    </div>
+                    <div className="p-2.5 bg-[#FAF7F2] rounded-xs border border-[#E0D7C6]">
+                      <span className="text-[10px] font-mono text-[#8B6F47] block font-semibold">2016 — 2021</span>
+                      <span className="text-xs font-bold text-[#161616] block mt-0.5">INFOTECH</span>
+                      <span className="text-[10px] text-[#645D53]">5 Years Tenure</span>
+                    </div>
                   </div>
-                </div>
-                <div className="text-xs text-[#645D53] mt-2.5 font-sans leading-relaxed">
-                  Demonstrated career stability delivering enterprise digital banking, payment systems, and real-time platforms.
+                  <div className="text-xs text-[#645D53] mt-2.5 font-sans leading-relaxed">
+                    Demonstrated career stability delivering enterprise digital banking, payment systems, and real-time platforms.
+                  </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Natural scroll column containing the experience cards */}
-          <div className="lg:col-span-7 relative">
+          <div className="lg:col-span-7 relative pb-8 lg:pb-56">
             
             {/* Timeline Vertical Rail */}
-            <div className="absolute left-3.5 sm:left-6 top-6 bottom-12 w-[2px] bg-[#D5C9B4]" />
+            <div className="absolute left-3.5 sm:left-6 top-6 bottom-16 lg:bottom-64 w-[2px] bg-[#D5C9B4]" />
 
-            <div className="space-y-10 lg:space-y-24 pl-7 sm:pl-16">
+            <div className="space-y-10 lg:space-y-72 pl-7 sm:pl-16">
               {EXPERIENCES.map((exp, idx) => (
-                <motion.div
+                <div
                   key={exp.id}
-                  initial={{ opacity: 0.9, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
                   className="relative"
                 >
                   
@@ -135,7 +133,7 @@ export const Experience: React.FC = () => {
                     </div>
 
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
