@@ -3,8 +3,9 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowUpRight, CheckCircle2, Cpu, ShieldCheck, Layers, FileText } from "lucide-react";
+import { X, CheckCircle2, Cpu, ShieldCheck, Layers } from "lucide-react";
 import { Project } from "@/data/portfolioData";
+import { ProjectVisualization } from "./ProjectVisualization";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -79,24 +80,28 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {/* Title & Role */}
               <div>
                 <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#161616] leading-tight">
-                  {project.title}
+                  {project.number} — {project.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 text-xs sm:text-sm text-[#645D53]">
                   <span className="font-semibold text-[#8B6F47]">Role: {project.role}</span>
                   <span className="hidden xs:inline">•</span>
-                  <span className="font-mono text-[11px] sm:text-xs">SYSTEM CASE STUDY</span>
+                  <span className="font-mono text-[11px] sm:text-xs">SYSTEM ARCHITECTURE CASE STUDY</span>
                 </div>
               </div>
 
-              {/* High-res UI Product Mockup */}
-              <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden border border-[#D5C9B4] shadow-md bg-[#161616]">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 850px"
-                />
+              {/* High-res UI Product Mockup or Architectural Vector Diagram */}
+              <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden border border-[#D5C9B4] shadow-md bg-[#141210]">
+                {project.diagramType ? (
+                  <ProjectVisualization type={project.diagramType} />
+                ) : project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 850px"
+                  />
+                ) : null}
               </div>
 
               {/* OVERVIEW */}
@@ -113,7 +118,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-white border border-[#E0D7C6] rounded-xs">
                   <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-1.5">
-                    BUSINESS PROBLEM
+                    BUSINESS / PRODUCT PROBLEM
                   </h4>
                   <p className="text-xs text-[#4A433A] leading-relaxed font-sans">
                     {project.businessProblem}
@@ -122,7 +127,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
                 <div className="p-4 bg-white border border-[#E0D7C6] rounded-xs">
                   <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-1.5">
-                    SYSTEM / PRODUCT
+                    SYSTEM SOLUTION
                   </h4>
                   <p className="text-xs text-[#4A433A] leading-relaxed font-sans">
                     {project.systemSolution}
@@ -154,7 +159,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <div className="p-4 bg-[#EDE5D7]/60 border border-[#D5C9B4] rounded-xs">
                   <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#161616] mb-1.5 flex items-center gap-1.5">
                     <Layers className="w-3.5 h-3.5 text-[#8B6F47]" />
-                    ARCHITECTURE
+                    ARCHITECTURE NOTES
                   </h4>
                   <p className="text-xs text-[#4A433A] leading-relaxed font-sans">
                     {project.architectureNotes}
@@ -176,7 +181,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div>
                 <h4 className="text-xs uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-2 flex items-center gap-1.5">
                   <Cpu className="w-4 h-4" />
-                  TECHNOLOGY STACK
+                  TECHNOLOGY
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
@@ -201,7 +206,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full sm:w-auto px-5 py-2.5 sm:py-2 bg-[#161616] text-[#FAF7F2] text-xs uppercase tracking-wider font-semibold rounded-full hover:bg-[#29251F] transition-colors text-center"
+                className="w-full sm:w-auto px-5 py-2.5 sm:py-2 bg-[#161616] text-[#FAF7F2] text-xs uppercase tracking-wider font-semibold rounded-full hover:bg-[#29251F] transition-colors text-center cursor-pointer"
               >
                 Close Case Study
               </button>
