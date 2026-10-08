@@ -10,7 +10,7 @@ interface ProjectVisualizationProps {
 export const ProjectVisualization: React.FC<ProjectVisualizationProps> = ({ type, className = "" }) => {
   return (
     <div
-      className={`relative w-full h-full bg-[#141210] overflow-hidden flex flex-col justify-between p-4 sm:p-5 select-none ${className}`}
+      className={`relative w-full h-full bg-[#141210] overflow-hidden flex flex-col justify-between p-3 sm:p-3.5 select-none ${className}`}
     >
       {/* Subtle blueprint grid overlay */}
       <div

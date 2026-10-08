@@ -5,6 +5,7 @@ export interface Project {
   category: string;
   filterCategories: string[];
   brief: string;
+  overviewParagraphs: string[];
   description: string;
   systemFocus: string[];
   image?: string;
@@ -195,6 +196,11 @@ export const PROJECTS: Project[] = [
     filterCategories: ["FinTech", "Banking"],
     brief:
       "A digital banking platform focused on customer account workflows, transaction processing, payment integrations, and operational financial services.",
+    overviewParagraphs: [
+      "This digital banking platform was designed to address customer account workflows, multi-currency balance ledgers, and transaction processing for modern financial operations. The architecture establishes a clear separation between client-facing interfaces, account ledger state machines, and payment gateway integrations.",
+      "The platform provides an integrated administrative back-office portal supporting customer KYC verification, account status lifecycle controls, and automated transaction audit trails. Operational teams can track account events, manage balance queries, and monitor transaction routing in real time.",
+      "By leveraging modular backend services and relational persistence with strict ACID transactional guarantees, the system maintains balance consistency across deposits, internal transfers, and external payment gateway settlements.",
+    ],
     description:
       "A comprehensive digital banking platform engineered for customer account lifecycles, structured transaction processing, payment gateway integrations, and operational financial services.",
     systemFocus: [
@@ -236,6 +242,11 @@ export const PROJECTS: Project[] = [
     filterCategories: ["Digital Assets", "Trading", "FinTech"],
     brief:
       "A crypto-focused trading platform covering digital asset workflows, trading operations, transaction processing, and portfolio-oriented views.",
+    overviewParagraphs: [
+      "A digital asset trading platform engineered to coordinate market data ingestion, interactive charting, order execution workflows, and portfolio-oriented asset management. The architecture is optimized to maintain low-latency frontend state synchronization during high-frequency market data events.",
+      "Traders are provided with live market data feeds, candlestick charting utilities, order book visualization, and structured order submission workflows covering market and limit orders with integrated balance verification.",
+      "The platform emphasizes strict transaction logging and portfolio reconciliation, ensuring that asset distribution calculations, position balances, and trade histories remain verifiable across volatile trading conditions.",
+    ],
     description:
       "A digital asset trading platform featuring real-time market data streaming, order placement workflows, transaction processing, and portfolio-oriented asset views.",
     systemFocus: [
@@ -277,6 +288,11 @@ export const PROJECTS: Project[] = [
     filterCategories: ["Trading", "FinTech", "AI/ML"],
     brief:
       "An algorithmic trading system focused on structured trading workflows, market-data processing, strategy execution concepts, and portfolio-oriented operations.",
+    overviewParagraphs: [
+      "An algorithmic trading and analytics system designed to support systematic strategy formulation, historical market data backtesting, and automated trade execution workflows. The system bridges quantitative research with reliable execution workflows.",
+      "The computational core processes time-series market datasets, applies quantitative models, and evaluates strategy performance across historical market regimes with risk constraint oversight.",
+      "Execution workflows operate under defined risk parameters, checking portfolio exposure constraints, order sizes, and position limits prior to generating and tracking order execution states.",
+    ],
     description:
       "An automated algorithmic trading framework built for structured strategy backtesting, market data ingestion, algorithmic execution workflows, and risk monitoring.",
     systemFocus: [
@@ -318,6 +334,11 @@ export const PROJECTS: Project[] = [
     filterCategories: ["Payments", "FinTech", "Banking"],
     brief:
       "A financial wallet platform designed around multi-currency balances, transaction workflows, wallet operations, and account management.",
+    overviewParagraphs: [
+      "A multi-currency financial wallet platform architected to manage segregated currency balances, double-entry sub-ledgers, and secure transaction workflows across multiple fiat and digital currency accounts.",
+      "The platform implements deterministic balance locking and atomic transfer operations, preventing overdrafts or ledger desynchronization during simultaneous deposit, conversion, and withdrawal operations.",
+      "An administrative settlement console enables operations teams to execute daily ledger reconciliations, audit dispute transactions, and manage currency liquidity distribution across operating accounts.",
+    ],
     description:
       "A multi-currency financial wallet platform engineered for atomic balance management, segregated ledger accounting, deposit/withdrawal workflows, and administrative reconciliation.",
     systemFocus: [
@@ -359,6 +380,11 @@ export const PROJECTS: Project[] = [
     filterCategories: ["Payments", "FinTech"],
     brief:
       "A transaction-processing platform focused on payment workflows, transaction states, account operations, and reliable backend financial services.",
+    overviewParagraphs: [
+      "A resilient transaction-processing platform built to handle payment routing, transaction state management, and reliable backend settlement workflows across payment gateway providers.",
+      "The platform enforces a deterministic transaction state machine—transitioning payments from initiated to authorized and settled states—with mandatory request idempotency checks to prevent duplicate charges or orphaned transactions.",
+      "Real-time webhook dispatch channels, exponential backoff retry policies, and immutable transaction audit logs ensure financial consistency and clear dispute resolution tracking.",
+    ],
     description:
       "A transaction orchestration platform designed for reliable payment lifecycle handling, deterministic state machine management, idempotent API processing, and ledger consistency.",
     systemFocus: [
@@ -399,7 +425,12 @@ export const PROJECTS: Project[] = [
     category: "FINTECH · ANALYTICS",
     filterCategories: ["FinTech"],
     brief:
-      "A financial analytics and reporting platform focused on transaction insights, operational reporting, financial data analysis, and decision-support dashboards.",
+      "A financial analytics and reporting platform focused on transaction insights, operational reporting, and decision-support dashboards.",
+    overviewParagraphs: [
+      "A financial intelligence and analytics platform engineered to consolidate high-volume transaction event streams into actionable operational reporting and executive decision-support dashboards.",
+      "The data pipeline ingests transaction records, computes multi-dimensional financial rollups across currencies, payment channels, and settlement intervals, and renders interactive performance visualizations.",
+      "Automated reconciliation checks flag settlement variances and fee discrepancies, enabling finance and operations teams to verify ledger integrity and generate scheduled audit reports.",
+    ],
     description:
       "A financial analytics and intelligence platform that processes transaction event streams into consolidated rollups, multi-dimensional ledger reports, and interactive operational dashboards.",
     systemFocus: [
@@ -440,7 +471,12 @@ export const PROJECTS: Project[] = [
     category: "AI/ML · FINTECH",
     filterCategories: ["AI/ML", "FinTech"],
     brief:
-      "An AI/ML-oriented financial intelligence system for analyzing financial data, identifying patterns, and supporting data-driven financial decision making.",
+      "An AI/ML-oriented financial intelligence system for analyzing financial data, identifying patterns, and supporting decision making.",
+    overviewParagraphs: [
+      "An AI/ML-driven financial intelligence system designed to analyze transactional event streams, identify complex behavioral patterns, and provide data-backed decision support for operations teams.",
+      "The platform processes normalized transaction records through machine learning feature pipelines to calculate statistical anomaly scores, detect structural irregularities, and assign confidence ratings.",
+      "A decision-support analyst dashboard presents prioritized event flags with supporting feature vectors, enabling rapid review while maintaining full auditability and model evaluation tracking.",
+    ],
     description:
       "An AI/ML financial intelligence architecture combining feature engineering pipelines, anomaly and pattern detection models, and decision-support tools for operational analysts.",
     systemFocus: [
@@ -481,7 +517,12 @@ export const PROJECTS: Project[] = [
     category: "GAMING · REAL-TIME PLATFORMS · FINTECH",
     filterCategories: ["Gaming", "FinTech"],
     brief:
-      "A real-time gaming platform combining gaming services with wallet infrastructure, multi-currency operations, administration, and analytics.",
+      "A real-time gaming platform combining gaming services with wallet infrastructure, multi-currency operations, and analytics.",
+    overviewParagraphs: [
+      "A real-time gaming platform combining high-concurrency multiplayer game session management with robust multi-currency player wallet infrastructure and administrative risk consoles.",
+      "The architecture decouples real-time gameplay state synchronization from financial transaction processing, ensuring immediate balance updates for player deposits, game wagers, and automated payouts.",
+      "Administrative tools provide platform operators with comprehensive risk controls, player account management consoles, operational analytics dashboards, and blockchain ledger integrations for verifiable records.",
+    ],
     description:
       "A real-time gaming platform combining gaming services with wallet infrastructure, multi-currency operations, administration consoles, and player analytics.",
     systemFocus: [
@@ -519,4 +560,5 @@ export const PROJECTS: Project[] = [
     isSecondary: true,
   },
 ];
+
 

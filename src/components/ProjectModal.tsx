@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle2, Cpu, ShieldCheck, Layers } from "lucide-react";
+import { X, CheckCircle2, Cpu, ShieldCheck, Layers, Sparkles } from "lucide-react";
 import { Project } from "@/data/portfolioData";
 import { ProjectVisualization } from "./ProjectVisualization";
 
@@ -67,20 +67,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={onClose}
-                className="p-1.5 sm:p-2 rounded-full hover:bg-[#E0D7C6] text-[#161616] transition-colors shrink-0"
+                className="p-1.5 sm:p-2 rounded-full hover:bg-[#E0D7C6] text-[#161616] transition-colors shrink-0 cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Scrollable Modal Content */}
-            <div className="overflow-y-auto p-4 sm:p-8 space-y-4 sm:space-y-6">
+            {/* Scrollable Detailed Modal Content */}
+            <div className="overflow-y-auto p-4 sm:p-8 space-y-5 sm:space-y-6">
               
-              {/* Title & Role */}
+              {/* Title & Metadata */}
               <div>
                 <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#161616] leading-tight">
-                  {project.number} — {project.title}
+                  {project.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 text-xs sm:text-sm text-[#645D53]">
                   <span className="font-semibold text-[#8B6F47]">Role: {project.role}</span>
@@ -89,7 +89,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </div>
               </div>
 
-              {/* High-res UI Product Mockup or Architectural Vector Diagram */}
+              {/* High-res Product Mockup or Architectural Vector Diagram */}
               <div className="relative aspect-[16/9] w-full rounded-xs overflow-hidden border border-[#D5C9B4] shadow-md bg-[#141210]">
                 {project.diagramType ? (
                   <ProjectVisualization type={project.diagramType} />
@@ -104,17 +104,37 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 ) : null}
               </div>
 
-              {/* OVERVIEW */}
-              <div className="p-4 bg-white border border-[#E0D7C6] rounded-xs">
-                <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-1.5">
-                  OVERVIEW
-                </h4>
-                <p className="text-xs sm:text-sm text-[#29251F] leading-relaxed">
-                  {project.description}
-                </p>
+              {/* SYSTEM FOCUS PILLS (Moved from cards into detailed modal) */}
+              <div className="p-3.5 bg-[#EDE5D7]/50 border border-[#E0D7C6] rounded-xs">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-[#7A7268] font-bold mb-2 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#8B6F47]" />
+                  SYSTEM FOCUS AREAS
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {(project.systemFocus || project.tags).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 text-[11px] uppercase font-mono tracking-wider font-semibold bg-white text-[#29251F] rounded-xs border border-[#D5C9B4]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              {/* BUSINESS PROBLEM & SYSTEM SOLUTION GRID */}
+              {/* OVERVIEW: Detailed 2-3 paragraph explanation */}
+              <div className="p-4 sm:p-5 bg-white border border-[#E0D7C6] rounded-xs">
+                <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-2.5">
+                  OVERVIEW
+                </h4>
+                <div className="space-y-2.5 text-xs sm:text-sm text-[#29251F] leading-relaxed">
+                  {(project.overviewParagraphs || [project.description]).map((paragraph, pIdx) => (
+                    <p key={pIdx}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* BUSINESS / PRODUCT PROBLEM & SYSTEM SOLUTION GRID */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-white border border-[#E0D7C6] rounded-xs">
                   <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#8B6F47] mb-1.5">
@@ -154,7 +174,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </ul>
               </div>
 
-              {/* ARCHITECTURE & IMPACT */}
+              {/* ARCHITECTURE NOTES & QUALITATIVE IMPACT */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-[#EDE5D7]/60 border border-[#D5C9B4] rounded-xs">
                   <h4 className="text-[11px] uppercase font-mono tracking-wider font-bold text-[#161616] mb-1.5 flex items-center gap-1.5">

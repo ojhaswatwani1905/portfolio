@@ -104,7 +104,7 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Project Cards Grid: 2-column Editorial Layout on Desktop, responsive stacked on mobile */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, idx) => (
               <ProjectCard
